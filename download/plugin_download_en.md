@@ -319,3 +319,14 @@ A generic HTTP / JSON fetcher plugin for [TrafficMonitor](https://github.com/zho
 * Download url: https://github.com/bestK/TMFetchPlugin/releases/latest
 * Related url: [[分享\] TMFetchPlugin 通用 HTTP/JSON 数据抓取插件 · Issue #2318 · zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor/issues/2318)
 
+### Better TrafficMonitor AI Usage
+
+A native, x64-only plugin that displays local Claude Desktop and Codex usage history directly in the TrafficMonitor taskbar. It keeps a compact seven-day local graph, shows remaining capacity and reset time, and reads only local client data plus the installed Codex app-server; it does not extract browser cookies.
+
+![Better TrafficMonitor AI Usage in the TrafficMonitor taskbar](images/better-trafficmonitor-ai-usage.png)
+
+* Author: [QQRM](https://github.com/qqrm)
+* Homepage: [qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin)
+* Compatibility: TrafficMonitor x64 only
+* Version: 1.2.1
+* Download url: [Release v1.2.1 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.2.1)
