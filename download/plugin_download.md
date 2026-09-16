@@ -333,12 +333,12 @@ A plugin for [TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) th
 
 ### Better TrafficMonitor AI Usage
 
-这是一个原生 x64 插件，可在 TrafficMonitor 任务栏中显示本机 Claude Desktop 和 Codex 的用量历史。它保留紧凑的本地七天图表，显示剩余用量和重置时间；只读取本机客户端数据并调用已安装的 Codex app-server，不会提取浏览器 Cookie。
+这是一个原生 x64 插件，可在 TrafficMonitor 任务栏中显示本机 Claude Desktop、Codex 和 ZCode（z.ai coding plan）的用量历史。它保留紧凑的本地七天图表，显示剩余用量和重置时间；只读取本机客户端数据、调用已安装的 Codex app-server，并使用 ZCode 客户端本地保存的 API key 查询 z.ai 配额接口，不会提取浏览器 Cookie。
 
 ![Better TrafficMonitor AI Usage 在 TrafficMonitor 任务栏中的显示](images/better-trafficmonitor-ai-usage.png)
 
 * 作者：[QQRM](https://github.com/qqrm)
 * 主页：[qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin)
 * 兼容性：仅支持 TrafficMonitor x64
-* 版本：1.2.1
-* 下载链接：[Release v1.2.1 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.2.1)
+* 版本：1.6.0
+* 下载链接：[Release v1.6.0 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.6.0)
