@@ -328,5 +328,5 @@ A native, x64-only plugin that displays local Claude Desktop, Codex, and ZCode (
 * Author: [QQRM](https://github.com/qqrm)
 * Homepage: [qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin)
 * Compatibility: TrafficMonitor x64 only
-* Version: 1.6.0
-* Download url: [Release v1.6.0 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.6.0)
+* Version: 1.8.0
+* Download url: [Release v1.8.0 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.8.0)
