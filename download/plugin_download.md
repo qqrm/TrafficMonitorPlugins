@@ -340,5 +340,5 @@ A plugin for [TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) th
 * 作者：[QQRM](https://github.com/qqrm)
 * 主页：[qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin)
 * 兼容性：仅支持 TrafficMonitor x64
-* 版本：1.8.0
-* 下载链接：[Release v1.8.0 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.8.0)
+* 版本：1.8.2
+* 下载链接：[Release v1.8.2 · qqrm/better-trafficmonitor-ai-usage-plugin](https://github.com/qqrm/better-trafficmonitor-ai-usage-plugin/releases/tag/v1.8.2)
