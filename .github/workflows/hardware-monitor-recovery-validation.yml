@@ -1,0 +1,42 @@
+name: HardwareMonitor recovery validation
+
+on:
+  push:
+    branches: [codex/validate-hardware-monitor-recovery]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-recovery:
+    if: github.repository == 'qqrm/TrafficMonitorPlugins'
+    runs-on: windows-2022
+    timeout-minutes: 25
+    steps:
+      - name: Checkout validation source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Build production DLLs and reproduce the recovery regression
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $baseline = Join-Path $env:RUNNER_TEMP 'hardware-monitor-original'
+          git worktree add --detach $baseline 9bf27fb0d05e2ef88c6ee16f865f88601cf44885
+          if ($LASTEXITCODE -ne 0) { throw 'Could not materialize the original source' }
+          try {
+            & ./tests/HardwareMonitorRecovery/run.ps1 -Repository $baseline -Scenario baseline -ExpectFailure
+            & ./tests/HardwareMonitorRecovery/run.ps1 -Repository $env:GITHUB_WORKSPACE -Scenario repaired
+          } finally {
+            git worktree remove --force $baseline
+          }
+      - name: Upload build logs and regression evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: hardware-monitor-recovery-validation
+          path: ${{ runner.temp }}/hardware-monitor-validation
+          if-no-files-found: error
+          retention-days: 7
