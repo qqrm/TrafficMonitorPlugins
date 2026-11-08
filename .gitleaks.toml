@@ -1,0 +1,21 @@
+title = "TrafficMonitorPlugins secret scanning policy"
+
+[extend]
+useDefault = true
+
+# This historical GitHub screenshot URL contains an AWS access key identifier
+# inside its signed JWT payload, not an AWS secret access key. Both the JWT and
+# nested presigned URL expired on 2026-07-15 at 08:25:26 UTC (a 300-second TTL).
+# Keep every condition conjunctive: this does not exempt the commit, Markdown
+# files, other rules, or the same screenshot URL introduced by a later commit.
+# Gitleaks checks decoded JWT payloads, including the percent-decoded pass.
+[[allowlists]]
+description = "Expired GitHub screenshot signature in the original download-page commit"
+targetRules = ["aws-access-token"]
+condition = "AND"
+commits = ["1c3d3103efb5b75d48d7d09479454ad6e179534a"]
+paths = ['''^download/plugin_download(?:_en)?\.md$''']
+regexTarget = "line"
+regexes = [
+  '''\{"iss":"github\.com","aud":"raw\.githubusercontent\.com","key":"key5","exp":1784103926,"nbf":1784103626,"path":"/118657956/485441173-50a8f5fc-4a52-4051-8378-bc267fb93dec\.png\?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA[A-Z2-7]{16}(?:%2F|/)20260715(?:%2F|/)us-east-1(?:%2F|/)s3(?:%2F|/)aws4_request&X-Amz-Date=20260715T082026Z&X-Amz-Expires=300&X-Amz-Signature=[a-f0-9]{64}&X-Amz-SignedHeaders=host&response-content-type=image(?:%2F|/)png"\}''',
+]
