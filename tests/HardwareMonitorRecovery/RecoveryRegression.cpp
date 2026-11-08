@@ -95,7 +95,7 @@ namespace
 
     void ExerciseRecovery(String^ directory)
     {
-        std::wstring config_dir = Common::StringToStdWstring(directory) + L"\\";
+        std::wstring config_dir = HardwareMonitor::Common::StringToStdWstring(directory) + L"\\";
         std::wstring path = config_dir + L"HardwareMonitor.ini";
         SeedConfig(path);
 
@@ -175,7 +175,7 @@ namespace
     {
         RecoveryComputer::RemainingOpenFailures = 0;
         RecoveryComputer::SensorPresent = true;
-        std::wstring config_dir = Common::StringToStdWstring(directory) + L"\\";
+        std::wstring config_dir = HardwareMonitor::Common::StringToStdWstring(directory) + L"\\";
         std::wstring path = config_dir + L"HardwareMonitor.ini";
         SeedConfig(path);
         utilities::CIniHelper ini(path);
