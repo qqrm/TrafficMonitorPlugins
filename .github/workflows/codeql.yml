@@ -1,0 +1,15 @@
+﻿name: CodeQL
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  codeql:
+    uses: qqrm/.github/.github/workflows/codeql-reusable.yml@d466faf58a1a1ae7860f375ae9507c2b86a8c771
+    with:
+      languages: 'cpp'
+      build-command: ''
