@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   codeql:
-    uses: qqrm/.github/.github/workflows/codeql-reusable.yml@d466faf58a1a1ae7860f375ae9507c2b86a8c771
+    uses: qqrm/.github/.github/workflows/codeql-reusable.yml@5578e5b7c1aca63a77f1e6552892bc90fa56ccd6
     with:
       languages: 'cpp'
       build-command: ''
