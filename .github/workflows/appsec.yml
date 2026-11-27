@@ -17,3 +17,17 @@ jobs:
       # GitHub Default setup owns CodeQL; AppSec verifies its native analysis.
       language: c-cpp
       codeql-mode: default
+
+  security-gate:
+    name: security
+    needs: security
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - name: Require all security checks to succeed
+        shell: bash
+        env:
+          SECURITY_RESULT: ${{ needs.security.result }}
+        run: test "$SECURITY_RESULT" = success
